@@ -5,17 +5,22 @@ import { ethers } from "hardhat";
 const day = "Day1";
 
 describe(day, () => {
-  let data: any;
+  let measurements: number[];
   let contract: Contract;
 
   beforeEach(async () => {
-    data = await fs.promises.readFile(`./inputs/${day}.txt`, "utf-8");
+    const data = await fs.promises.readFile(`./inputs/${day}.txt`, "utf-8");
+    measurements = data.split("\n").map(Number);
 
     const contractFactory = await ethers.getContractFactory(day);
     contract = await contractFactory.deploy();
   });
 
-  it("Part 1", async () => {});
+  it("Part 1", async () => {
+    console.log((await contract.p1(measurements)).toString());
+  });
 
-  it("Part 2", async () => {});
+  it("Part 2", async () => {
+    console.log((await contract.p2(measurements)).toString());
+  });
 });
