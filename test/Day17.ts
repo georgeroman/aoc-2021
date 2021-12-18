@@ -24,7 +24,7 @@ describe(day, () => {
   });
 
   it("Part 1", async () => {
-    // console.log((await contract.p1(lowY, highY)).toString());
+    console.log((await contract.p1(lowY, highY)).toString());
   }).timeout(10 * 60 * 1000);
 
   it("Part 2", async () => {
