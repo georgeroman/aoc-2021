@@ -42,7 +42,7 @@ describe(day, () => {
 
   it("Part 1", async () => {
     // Use `eth_call` since `p1` is not a view method in this case
-    // console.log((await contract.callStatic.p1(items)).toString());
+    console.log((await contract.callStatic.p1(items)).toString());
   }).timeout(10 * 60 * 1000);
 
   it("Part 2", async () => {
